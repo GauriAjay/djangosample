@@ -27,7 +27,7 @@ class Product(models.Model):
         return self.name
     
 class Order(models.Model):
-    STATUS=(('notdelivered','notdeliverd'),
+    STATUS=(('pending','pending'),
     ('out for delivery','out for delivery'),
     ('delivered','delivered'),
     )

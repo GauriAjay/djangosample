@@ -9,12 +9,17 @@ def home(request):
     totcust=customers.count()
     totorder=orders.count()
     delivered=orders.filter(status='delivered').count()
-    notdelivered=orders.filter(status='notdelivered').count()
+    pending=orders.filter(status='pending').count()
     
-    context={'orders':orders,'customers':customers,'totorder':totorder,'delivered':delivered,'notdelivered':notdelivered}
+    context={'orders':orders,'customers':customers,'totorder':totorder,'delivered':delivered,'pending':pending}
     return render(request,'accounts/home.html',context)
 def products(request):
     products=Product.objects.all()
     return render(request,'accounts/products.html',{'products':products})
-def customers(request):
-    return render(request,'accounts/customers.html')
+def customers(request,pk_test):
+    customer=Customer.objects.get(id=pk_test)
+    orders=customer.order_set.all()
+    order_count=orders.count()
+    context={'customer':customer,'orders':orders,'order_count':order_count}
+    return render(request,'accounts/customers.html',context)
+    
