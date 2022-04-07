@@ -21,7 +21,7 @@
 
         {% for j in customers %}
          <tr>
-             <td><a href="{% url 'customer' j.id %}">view</a></td>
+             <td><a class="btn btn-sm btn-info" href="{% url 'customer' j.id %}">view</a></td>
              <td>{{j.name}}</td>
              <td>{{j.mobile}}</td>
          </tr>
@@ -49,8 +49,8 @@
              <td>{{k.product}}</td>
              <td>{{k.date}}</td>
              <td>{{k.status}}</td>
-             <td><a href="">update</a></td>
-             <td><a href="">delete</a></td>
+             <td><a class="btn btn-sm btn-info" href="">update</a></td>
+             <td><a class="btn btn-sm btn-danger" href="">delete</a></td>
          </tr>
          {% endfor %}
         </table>
