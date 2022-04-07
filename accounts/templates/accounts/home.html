@@ -13,8 +13,17 @@
         <table class="table table-sm">
             <tr>
                 <th>customer</th>
-                <th>orders</th>
+                <th>mobile</th>
             </tr>
+
+        </tr>
+
+        {% for j in customers %}
+         <tr>
+             <td>{{j.name}}</td>
+             <td>{{j.mobile}}</td>
+         </tr>
+         {% endfor %}
         </table>
         </div>
     </div>
@@ -32,6 +41,16 @@
                 <th>update</th>
                 <th>remove</th>
             </tr>
+
+            {% for k in orders %}
+         <tr>
+             <td>{{k.product}}</td>
+             <td>{{k.date}}</td>
+             <td>{{k.status}}</td>
+             <td><a href="">update</a></td>
+             <td><a href="">delete</a></td>
+         </tr>
+         {% endfor %}
         </table>
     </div>
 
