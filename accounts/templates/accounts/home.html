@@ -12,6 +12,7 @@
         <a class="btn btn-primary btn-sm btn-block" href="">Create customer</a>
         <table class="table table-sm">
             <tr>
+                <th></th>
                 <th>customer</th>
                 <th>mobile</th>
             </tr>
@@ -20,6 +21,7 @@
 
         {% for j in customers %}
          <tr>
+             <td><a href="{% url 'customer' j.id %}">view</a></td>
              <td>{{j.name}}</td>
              <td>{{j.mobile}}</td>
          </tr>
